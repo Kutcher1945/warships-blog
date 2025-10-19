@@ -12,16 +12,16 @@ export function Footer() {
               <Image
                 src="/iron_horizon_white_letters.png"
                 alt="Iron Horizon"
-                width={160}
-                height={35}
-                className="h-7 w-auto dark:block hidden"
+                width={260}
+                height={60}
+                className="h-12 w-auto dark:block hidden"
               />
               <Image
                 src="/iron_horizon_black_letters.png"
                 alt="Iron Horizon"
-                width={160}
-                height={35}
-                className="h-7 w-auto dark:hidden block"
+                width={260}
+                height={60}
+                className="h-12 w-auto dark:hidden block"
               />
             </div>
             <p className="text-sm text-muted-foreground max-w-md">

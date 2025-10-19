@@ -38,13 +38,13 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-4">
             <Image
               src={theme === 'dark' ? '/iron_horizon_white_letters.png' : '/iron_horizon_black_letters.png'}
               alt="Iron Horizon"
-              width={180}
-              height={40}
-              className="h-8 w-auto"
+              width={260}    // was 180
+              height={60}    // was 40
+              className="h-12 w-auto"   // was h-8
               priority
             />
           </a>
