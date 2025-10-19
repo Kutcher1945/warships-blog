@@ -1,4 +1,5 @@
-import { Anchor, Github, Twitter, Mail } from 'lucide-react'
+import { Github, Twitter, Mail } from 'lucide-react'
+import Image from 'next/image'
 
 export function Footer() {
   return (
@@ -7,9 +8,21 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <Anchor className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold font-serif">Captain's Log</span>
+            <div className="mb-4">
+              <Image
+                src="/iron_horizon_white_letters.png"
+                alt="Iron Horizon"
+                width={160}
+                height={35}
+                className="h-7 w-auto dark:block hidden"
+              />
+              <Image
+                src="/iron_horizon_black_letters.png"
+                alt="Iron Horizon"
+                width={160}
+                height={35}
+                className="h-7 w-auto dark:hidden block"
+              />
             </div>
             <p className="text-sm text-muted-foreground max-w-md">
               A comprehensive historical archive documenting the naval vessels of World War I.
@@ -99,7 +112,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Captain's Log. Historical archive for educational purposes.
+            © {new Date().getFullYear()} Iron Horizon. Historical archive for educational purposes.
           </p>
 
           <div className="flex items-center gap-4">

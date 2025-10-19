@@ -15,9 +15,10 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Captain's Log - WWI Naval Archive",
-  description: "A comprehensive historical archive documenting the naval vessels of World War I",
+  title: "Iron Horizon - WWI Naval Archive",
+  description: "Explore the iron dreadnoughts and legendary warships of World War I. A comprehensive historical archive of naval vessels that shaped the Great War at sea.",
   generator: "v0.app",
+  keywords: "WWI warships, naval history, battleships, dreadnoughts, naval warfare, Iron Horizon",
 }
 
 export default function RootLayout({

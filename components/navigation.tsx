@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { Moon, Sun, Menu, X, Anchor } from 'lucide-react'
+import { Moon, Sun, Menu, X } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import Image from 'next/image'
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -37,11 +38,16 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <Anchor className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold font-serif">Captain's Log</span>
-          </div>
-
+          <a href="/" className="flex items-center gap-3">
+            <Image
+              src={theme === 'dark' ? '/iron_horizon_white_letters.png' : '/iron_horizon_black_letters.png'}
+              alt="Iron Horizon"
+              width={180}
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
+          </a>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <a

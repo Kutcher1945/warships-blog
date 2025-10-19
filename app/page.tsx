@@ -13,6 +13,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { useCounterAnimation } from "@/hooks/use-counter-animation"
 import { useCardTilt } from "@/hooks/use-card-tilt"
 import { useParallax } from "@/hooks/use-parallax"
+import { useGsapFadeIn, useGsapScale, useGsapStagger, useGsapParallax } from "@/hooks/use-gsap-scroll"
 import { ships } from "@/data/ships"
 import Image from "next/image"
 import Link from "next/link"
@@ -105,6 +106,14 @@ export default function Home() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const parallaxOffset = useParallax(0.5)
 
+  // GSAP Animations
+  const heroTitleRef = useGsapScale()
+  const heroTextRef = useGsapFadeIn(0.3)
+  const heroButtonsRef = useGsapFadeIn(0.5)
+  const shipsGridRef = useGsapStagger(3)
+  const statsGridRef = useGsapStagger(3)
+  const gsapParallaxRef = useGsapParallax(0.3)
+
   // Keyboard shortcut for search (Cmd+K / Ctrl+K)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -162,10 +171,11 @@ export default function Home() {
         <AnimatedWaves />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center animate-fade-in">
-          <div className="flex items-center justify-center gap-3 mb-8 animate-scale-in">
-            <Ship className="w-12 h-12 md:w-16 md:h-16 text-primary" />
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-serif tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-accent">
-              Captain's Log
+          <div className="flex items-center justify-center mb-8 animate-scale-in">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-serif tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-accent">
+                Iron Horizon
+              </span>
             </h1>
           </div>
           <p className="text-xl md:text-2xl lg:text-3xl text-foreground/80 max-w-3xl mx-auto leading-relaxed mb-10 font-light">
